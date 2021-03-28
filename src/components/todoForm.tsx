@@ -32,7 +32,7 @@ const TodoForm = (props) => {
           <Input
             type="text"
             name="text"
-            placeholder="Add a todo"
+            placeholder="Update your item"
             value={input}
             onChange={handleChange}
             // ref={inputRef}
