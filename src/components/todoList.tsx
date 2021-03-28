@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Heading, VStack } from "@chakra-ui/react";
 import TodoForm from "./todoForm";
 import Todo from "./todo";
 
@@ -18,20 +18,21 @@ const TodoList = () => {
     // console.log(todo, ...todos);
   };
 
-  const removeTodo = (id) => {
-    const removeArr = [...todos].filter((todo) => todo.id !== id);
-
-    setTodos(removeArr);
-  };
-
+  
   const updateTodo = (todoId, newValue) => {
     if (!newValue.text || /^\s*$/.test(newValue.text)) {
       return;
     }
-
+    
     setTodos((prev) =>
-      prev.map((item) => (item.id === todoId ? newValue : item))
+    prev.map((item) => (item.id === todoId ? newValue : item))
     );
+  };
+
+  const removeTodo = (id) => {
+    const removeArr = [...todos].filter((todo) => todo.id !== id);
+
+    setTodos(removeArr);
   };
 
   const completeTodo = (id) => {
@@ -45,11 +46,28 @@ const TodoList = () => {
   };
 
   return (
-    <Box>
-      <Heading>What's the plan for today?</Heading>
+    <VStack
+      justifyContent="start"
+      w="520px"
+      // minH="600px"
+      bgColor="#161a2b"
+      textAlign="center"
+      margin="128px auto"
+      borderRadius="10px"
+      paddingBottom="32px"
+      p="1.6rem"
+    >
+      <Heading color="white" m="32px 0" fontSize="24px">
+        What's the plan for today?
+      </Heading>
       <TodoForm onSubmit={addTodo} />
-      <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} updateTodo={updateTodo} />
-    </Box>
+      <Todo
+        todos={todos}
+        completeTodo={completeTodo}
+        updateTodo={updateTodo}
+        removeTodo={removeTodo}
+      />
+    </VStack>
   );
 };
 
