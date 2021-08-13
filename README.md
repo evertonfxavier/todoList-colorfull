@@ -17,7 +17,7 @@ This project was developed using the following technologies:
  
 - [NextJS](https://nextjs.org/)
 - [Chakra-ui](https://chakra-ui.com/)
-- Typescript
+- [Typescript](https://www.typescriptlang.org/)
 
 
 ## 🚀 Getting Started 
