@@ -8,7 +8,7 @@
 
 ## 💻 Project
 
-Este projeto foi desenvolvido com o objetivo de aplicar conceitos básicos do NextJS e utilização do Chakra-ui.
+Este projeto foi desenvolvido com o objetivo de aplicar conceitos básicos, utilizando Typescript, NextJS e Chakra-ui.
 <br />
 
 ## 🧬 Techologies
